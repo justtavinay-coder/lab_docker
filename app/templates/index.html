@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>MVC App</title>
+    <style>
+        body {
+            max-width: 720px;
+            margin: 40px auto;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        form {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        input {
+            flex: 1;
+            padding: 8px 10px;
+        }
+
+        button {
+            padding: 8px 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Список задач</h1>
+    <form method="post">
+        <input name="name" placeholder="Введите название задачи" required>
+        <button type="submit">Добавить</button>
+    </form>
+
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }}</li>
+        {% else %}
+            <li>Пока задач нет</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
